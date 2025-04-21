@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>테이블 실습</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid rgb(6, 6, 6);
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>먹거리</h2>
+    <table>
+        <colgroup>
+            <col style="background-color: bisque;">
+            <col span="2" style="width: 120px;">
+        </colgroup>
+        <tr>
+            <th>입춘 천냥 국수</th>
+            <td>11:00 ~ 16:00</td>
+            <td>목관아 주차장</td>
+        </tr>
+        <tr>
+            <th>제주 향토 음식</th>
+            <td rowspan="3">10:30 ~ 17:00</td>
+            <td rowspan="3">관덕정 마당</td>
+        </tr>
+        <tr>
+            <th>입춘 주전부리</th>
+        </tr>
+        <tr>
+            <th>차 나눔</th>
+        </tr>
+    </table>
+</body>
+
+</html>
