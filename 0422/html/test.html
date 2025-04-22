@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Test</title>
+  <style>
+    img {
+      width: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="/0422/img/0.png" alt="기본이미지" srcset="
+      1.png 200w,
+      2.png 300w" sizes="(max-width: 600px) 200px, 300px">
+  <picture>
+    <source media="(max-width: 600px)" srcset="/0422/img/1.png">
+    <source media="(max-width: 601px)" srcset="/0422/img/2.png">
+    <img src="/0422/img/0.png" alt="반응형 이미지">
+  </picture>
+</body>
+
+</html>
