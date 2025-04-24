@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폰트 박스 쉐도우</title>
+    <style>
+    @font-face {
+        font-family: 'MapoFlowerIsland';
+        src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/MapoFlowerIslandA.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    h1 {
+        font-family: 'MapoFlowerIsland';
+    }
+    div {
+        width: 200px;
+        height: 100px;
+        margin: 14px;
+        border: 1px solid blue;
+        border-radius: 20px;
+    }
+    .box1 { box-shadow: 2px -2px 5px 0px;}
+    .box2 { box-shadow: 5px 5px 15px 5px blue;}
+    .box3 { box-shadow: rgb(85, 91, 255) 0px 0px 0px 3px, rgb(31, 193, 27) 0px 0px 0px 6px, rgb(255, 217, 19) 0px 0px 0px 9px, rgb(255, 156, 85) 0px 0px 0px 12px, rgb(255, 85, 85) 0px 0px 0px 15px;}
+</style>
+</head>
+<body>
+    <h1>내일은 쉬는 날! 🙂</h1>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>
