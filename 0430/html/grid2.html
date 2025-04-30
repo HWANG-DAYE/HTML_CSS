@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrapper {
+            width: 600px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: minmax(100px, auto) minmax(300px, auto);
+        }
+        .items {
+            padding: 10px;
+            background-color: #eee;
+        }
+        .items:nth-child(odd) {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit</div>
+        <div class="items"> Nobis alias, ipsam facilis totam eius sint architecto possimus consectetur dicta eum!</div>
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis alias, ipsam facilis totam eius sint architecto possimus consectetur dicta eum!</div>
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, deleniti.</div>
+        <div class="items">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, deleniti.</div>
+        <div class="items">Lorem ipsum dolor sit amet.</div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #ffe8f0;
+    padding: 20px;
+}
+#login {
+    background-color: #fff;
+    border: 3px solid #fbbcd2;
+    border-radius: 20px;
+    padding: 20px;
+    width: 400px;
+    margin: 30px auto;
+
+}
+#login ul {
+    line-height: 40px;
+    list-style: none;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+#login h2 {
+    color: #fd6fa1;
+}
+#login check {
+    font-size: 12px;
+    color: #000;
+}
+#login button {
+    justify-content: center;
+    border: 1px solid #fc92b7;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: "맑은 고딕", 굴림, 돋움;
+    
+    padding: 7px 25px;
+    cursor: pointer;
+    background-color: #fc92b7;
+    color: white;
+}
+#join label {
+    float: left;
+    font-size: 13px;
+    width: 110px;
+}
+#join input[type="text"], input[type="password"] {
+    border: 2px solid #fbbcd2;
+    border-radius: 3px;
+    font-size: 13px;
+    padding: 5px;
+    width: 200px;
+}

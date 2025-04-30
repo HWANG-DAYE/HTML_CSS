@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+        #wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 200px);
+            grid-template-rows: repeat(2, minmax(100px, auto));
+
+            grid-gap:20px 30px
+        }
+        .items {
+            padding: 15px;
+            background-color: #eee;
+        }
+        .items:nth-child(odd) {
+            background-color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <div class="items">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos corrupti quas sed maxime, vel obcaecati.</div>
+        <div class="items">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos corrupti quas sed maxime, vel obcaecati.</div>
+        <div class="items">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos corrupti quas sed maxime, vel obcaecati.</div>
+        <div class="items">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos corrupti quas sed maxime, vel obcaecati.</div>
+        <div class="items">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos corrupti quas sed maxime, vel obcaecati.</div>
+        <div class="items">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos corrupti quas sed maxime, vel obcaecati.</div>
+    </div>
+</body>
+</html>
