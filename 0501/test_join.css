@@ -1,0 +1,78 @@
+@font-face {
+    font-family: 'PyeongChangPeace-Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+}
+#join {
+    background-color: #e8dad3;
+    border: 3px solid #d5b5a5;
+    border-radius: 20px;
+    padding: 20px;
+    width: 500px;
+}
+#join h1{
+    font-family: 'PyeongChangPeace-Bold';
+    color: #806558;
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+#join ul {
+    font-family: 'Pretendard-Regular';
+    list-style-type: none;
+    font-size: 17px;
+    margin-bottom: 15px;
+    line-height: 30px;
+    padding: 5px 10px;
+}
+#join ul small{
+    font-size: 13px;
+}
+#join div {
+    width: 250px;
+    margin: 10px auto;
+}
+#join button {
+    background-color: #a37d6a;
+    border: 1px solid #a37d6a;
+    border-radius: 20px;
+    font-size: 16px;
+    font-family: 'Pretendard-Regular';
+    padding: 10px 30px;
+    cursor: pointer;
+}
+#join label {
+    font-family: 'Pretendard-Regular';
+    float: left;
+    width: 110px;
+}
+
+#join input[type="text"], input[type="password"], input[type="tel"], input[type="email"], input[type="date"], select{
+    border: 2px solid #a37d6a;
+    border-radius: 3px;
+    font-size: 13px;
+    font-family: 'Pretendard-Regular';
+    padding: 5px;
+    width: 300px;
+    margin: 5px;
+}
