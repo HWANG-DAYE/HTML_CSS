@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자리 배치도 만들기</title>
+</head>
+<body>
+    <script>
+        let num = prompt('입장객 수를 입력하세요.')
+        let rnum = prompt('한줄에 앉을 사람 수를 입력하세요.')
+        let rowNum ;
+
+        // if(num%rnum==0) {
+        //     rowNum = parseInt(num/rnum);
+        // } else {
+        //     rowNum = parseInt(num/rnum)+1;
+        // }
+        // alert(rowNum+"줄이 필요합니다.")
+
+        // rowNum = parseInt(num/rnum);
+        // if(num%rnum!=0) rowNum+=1;
+
+        rowNum = Math.ceil(num/rnum);
+
+        document.write("모두" + rowNum+"개의 줄이 필요합니다.")
+    </script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자리 배치도 만들기</title>
+    <style>
+        table,
+        td {
+            border: 1px solid #ccc;
+            border-collapse: collapse
+        }
+
+        td {
+            padding: 5px;
+            font-size: 0.pem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <table>
+        <tr>
+            <td>좌석1</td>
+            <td>좌석2</td>
+            <td>좌석3</td>
+        </tr>
+
+        <tr>
+            <td>좌석4</td>
+            <td>좌석5</td>
+            <td>좌석6</td>
+        </tr>
+
+        <tr>
+            <td>좌석7</td>
+            <td>좌석8</td>
+            <td>좌석9</td>
+        </tr>
+
+        <tr>
+            <td>좌석10</td>
+        </tr>
+    </table> -->
+
+    <script>
+        var i, j;
+        var num = prompt("입장객 수를 입력하시오 : ");
+        var rnum = prompt("한 줄에 앉을 사람 수를 입력하시오 : ");
+        var rowNum;
+        var seatNo = 0;
+        if (num % rnum == 0) {
+            rowNum = parseInt(num / rnum);
+        }
+        else {
+            rowNum = parseInt(num / rnum) + 1;
+        }
+
+        document.write("<table>");
+        for (i = 0; i < rowNum; i++) {
+            document.write("<tr>");
+            for (j = 1; j <= rnum; j++) {
+                seatNo++;
+                if (seatNo > num) break;
+                document.write("<td> 좌석" + seatNo + "</td>");
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    </script>
+</body>
+
+</html>
