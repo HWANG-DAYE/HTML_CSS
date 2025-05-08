@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>라이트박스</title>
+    <link rel="stylesheet" href="lightBox.css">
+  </head>
+  <body>
+    <div class="row">
+      <ul>
+        <!--축소이미지-->
+        <li><img src="1-1.jpg" data-src="1-2.jpg" class="pic"></li>
+        <li><img src="2-1.jpg" data-src="2-1.jpg" class="pic"></li>
+        <li><img src="3-1.jpg" data-src="3-1.jpg" class="pic"></li> 
+        <li><img src="4-1.jpg" data-src="4-1.jpg" class="pic"></li>
+        <li><img src="5-1.jpg" data-src="5-1.jpg" class="pic"></li>
+        <li><img src="6-1.jpg" data-src="6-1.jpg" class="pic"></li>          
+      </ul>    
+    </div>
+
+    <!--확대이미지-->
+    <div id="lightbox">
+			<img src="1-2.jpg" alt="" id="lightboxImage">			
+    </div> 
+
+    <script>
+      let pics = document.getElementsByClassName("pic");
+      let lightBox = document.getElementById("lightbox");
+      let lightboxImage = document.getElementById("lightboxImage");
+
+      for(let i=0; i<pics.length; i++) {
+        pics[i].addEventListener("click", showLightbox);
+      }
+
+      function showLightbox() {
+        let bigLocation = this.getAttribute("data-src");
+        lightboxImage.setAttribute("src", bigLocation);
+        lightBox.style.display="block";
+      }
+
+      lightBox.onclick = function() {
+        lightBox.style.display = "none";
+      }
+    </script>
+
+  </body>
+</html>

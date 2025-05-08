@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1{
+            font-size:25px;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            font-size:20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>웹 개발 공부</h1>
+    <ul>
+        <li class="col" id="ft">css</li>
+        <li class="col">html</li>
+        <li class="col">js</li>
+    </ul>
+    <script>
+        let tgs=document.getElementsByClassName('col');
+        console.log(tgs);
+
+        tgs[0].style.color='red';
+        tgs[2].style.color='blue';
+
+        let ft = document.getElementById('ft');
+        console.log(ft);
+        ft.style.backgroundColor='green'
+    </script>
+</body>
+</html>
