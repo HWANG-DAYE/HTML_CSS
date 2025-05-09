@@ -59,7 +59,7 @@ a {
 }
 
 #profile {
-    background-color: rgb(250, 217, 222);
+    background-color: rgb(251, 244, 245);
     grid-area: profile;
 }
 
@@ -70,8 +70,8 @@ a {
 }
 
 footer {
-    background-color: #f5f3f3;
+    background-color: #e4e4e4;
     grid-area: foot;
-    font-size: small;
+    font-size: 20px;
     color: #717171;
 }
