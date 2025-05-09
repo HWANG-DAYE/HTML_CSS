@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홈페이지 만들기</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="page.css">
+    
+</head>
+
+<body>
+    <div id="con">
+        <div id="container">
+            <div id="logo">
+                <a href="page.html">Travelover</a>
+            </div>
+
+            <div id="nav">
+                <ul id="topMenu">
+                    <li><a href="#">단체 여행 <span>▼</span></a>
+                        <ul>
+                            <li><a href="#">회사 연수</a></li>
+                            <li><a href="#">수학 여행</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">맞춤 여행 <span>▼</span></a>
+                        <ul>
+                            <li><a href="#">4.3 평화 기행</a></li>
+                            <li><a href="#">곶자왈 체험</a></li>
+                            <li><a href="#">힐링 워크샵</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">갤러리</a></li>
+                    <li><a href="#">문의하기</a></li>
+                </ul>
+            </div>
+
+            <div id="slideshow">
+                <div id="slides">
+                    <img src="photo1.jpg" alt="">
+                    <img src="photo2.jpg" alt="">
+                    <img src="photo3.jpg" alt="">
+                    <button class="btn" id="prev">&lang;</button>
+                    <button class="btn" id="next">&rang;</button>
+                </div>
+            </div>
+
+            <div id="tabMenu">
+                <input type="radio" id="tab1" name="tabs" checked>
+                <label for="tab1">공지사항</label>
+                <input type="radio" id="tab2" name="tabs">
+                <label for="tab2">갤러리</label>
+                <div id="notice" class="tabContent">
+                    <h2>공지사항 내용입니다.</h2>
+                    <ul>
+                        <li>사무실을 이전했습니다</li>
+                        <li>[참가 모집] 카약 체험에 초대합니다.</li>
+                        <li>[참가 모집] 여름 방학 기간, 오름 체험단을 모집합니다.</li>
+                        <li>겨울, 추천 여행지</li>
+                        <li>가을, 추천 여행지</li>
+                    </ul>
+                </div>
+                <div id="gallery" class="tabContent">
+                    <h2>갤러리 내용입니다.</h2>
+                    <ul style="margin:auto">
+                        <li><img src="photo4.jpg"></li>
+                        <li><img src="photo5.jpg"></li>
+                        <li><img src="photo6.jpg"></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="links">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span id="quick-icon1"></span>
+                            <p>춘식기행</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span id="quick-icon2"></span>
+                            <p>가을기행</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span id="quick-icon3"></span>
+                            <p>도전기행</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <footer>
+                <div id="con1">
+                    <ul id="intro">
+                        <li><a href="#">회사소개</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">여행약관</a></li>
+                        <li><a href="#">사이트맵</a></li>
+                    </ul>
+                    <ul id="sns">
+                        <li><a href="#"><i id="insta" class="fa-brands fa-instagram"></i></a></li>
+                        <li><a href="#"><i id="face" class="fa-brands fa-facebook"></i></a></li>
+                        <li><a href="#"><i id="yout" class="fa-brands fa-youtube"></i></a></li>
+                    </ul>
+                </div>
+                <div id="address">
+                    제주특별자치도 ****동 ***(대표전화) 123-456-7890
+                </div>
+            </footer>
+
+        </div>
+    </div>
+
+    <script src = "imgShow.js"></script>
+</body>
+
+</html>

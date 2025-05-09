@@ -1,0 +1,355 @@
+@font-face {
+    font-family: 'DungGeunMo';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/DungGeunMo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 25px;
+    font-family: 'DungGeunMo', cursive;
+}
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#con {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(6, 200px);
+    grid-template-rows: repeat(8, 100px);
+    grid-template-areas:
+        "l nav nav nav nav nav"
+        "slid slid slid slid slid slid"
+        "slid slid slid slid slid slid"
+        "slid slid slid slid slid slid"
+        "tab tab tab link link link"
+        "tab tab tab link link link"
+        "tab tab tab link link link"
+        "foot foot foot foot foot foot";
+}
+
+#logo a{
+    color:black;
+    text-align: center;
+    height: 100%;
+    line-height: 100px;
+    font-family: 'DungGeunMo', cursive;
+}
+
+#logo {
+    background-color:white;
+    grid-area: l;
+
+}
+#nav {
+    background-color: white;
+    grid-area: nav;
+}
+
+#slideshow {
+    grid-area: slid;
+}
+
+#tabMenu {
+    background-color: white;
+    grid-area: tab;
+
+}
+
+#links {
+    background-color: white;
+    grid-area: link;
+
+}
+
+footer {
+    background-color: white;
+    grid-area: foot;
+    
+
+}
+
+/********************************/
+/*   네비게이션 영역   */
+/********************************/
+/*필수 구현 요소*/
+#topMenu {
+    height: 60px;
+    margin-top: 40px; /*위쪽 여백*/
+}
+#topMenu>li {
+    /* 메뉴 항목을 왼쪽으로 플로팅 */
+    float: left;
+    /* 서브 메뉴를 absolute로 하기 위해, 이 부분을 relative로 */
+    position: relative;
+}
+#topMenu>li>a:hover { /* 자식 요소만 자손x*/
+    /* 마우스 오버하면 색상 바뀜 */
+    color: #000;
+}
+/* 서브 메뉴 스타일 */
+#topMenu>li>ul {
+    /* 서브 메뉴 처음에는 화면에 안 보이게 */
+    display: none;
+    /* 서브 메뉴 위치 = 부모 요소를 기준으로 */
+    position: absolute;
+    /*너비*/
+    width: 160px;
+    /* 슬라이드 쇼 비치도록 배경 색 조절 */
+    background: rgba(255, 255, 255, 0.6);
+    left: 20px; /*중앙에 맞추기 위해 옆으로 이동*/
+    margin: 0;
+}
+
+#topMenu>li:hover>ul {
+    /* 메인 메뉴 항목 위로 오버하면 서브 메뉴 표시 */
+      display: block;
+    /* 슬라이드 쇼에 가리지 않게 조절 */  
+      z-index: 10; /*값이 클 수록 화면 위쪽에 배치*/
+  }
+
+  /* 서브 메뉴 마우스 오버하면 색상 바뀜 */
+  #topMenu>li>ul>li>a:hover {
+      color: #f00; 
+  }
+  
+/*디자인 구현 요소*/
+#topMenu>li>a {
+    /* 글자 색 */
+    color: gray;
+    /* 글자 굵기 */
+    font-weight: 500;
+    /* 패딩 */
+    padding: 20px 60px;
+}
+
+#topMenu>li>a>span {
+    /* 화살표 크기가 너무 크기 조금 작게 조정*/
+      font-size: 0.5em;
+}
+
+/* 서브 메뉴 항목 */
+#topMenu>li>ul>li {
+    padding: 10px 10px 10px 30px;
+}
+
+#topMenu>li>ul>li>a {
+    font-size: 20px;
+    padding: 10px;
+    color: #000;
+}
+  
+/********************************/
+/*   이미지 슬라이드 쇼 영역    */
+/********************************/
+#slideShow {   
+    overflow:hidden;   /* 영역 넘치면 감춤 */ 
+    position: relative;
+}
+#slides {
+    position: absolute;
+}
+/*이미지 크기 조절*/
+#slides > img {
+    width:1200px;  
+    height:300px;
+}
+/*좌우 버튼*/
+button{
+    position: absolute;
+    height:300px;  /* 위아래 가득 차게 */ 
+    top:0;
+    border:none;  /* 테두리 없이 */  
+    padding:20px;
+    background-color: transparent;  /* 투명 배경 */ 
+    color:#000;  /* 화살표 색은 검정 */  
+    font-weight:800;  /* 굵게 */ 
+    font-size: 24px;  /* 화살표 크기 */ 
+    opacity: 0.5;  /* 반투명 */ 
+}
+#prev {
+    left:0;  /* 왼쪽으로 붙여서 */ 
+}
+#next {
+    right:0;  /* 오른쪽으로 붙여서 */ 
+}
+button:hover {
+    background-color:#222;  /* 짙은 회색 배경 */
+    color:#fff;   /* 흰색 화살표 */ 
+    opacity:0.6;   /* 불투명도를 조금 높임 */ 
+    cursor:pointer;  /* 커서 모양을 포인터로 */ 
+}
+button:focus{
+    border:none;
+}
+/********************************/
+/*   퀵 메뉴 영역    */
+/********************************/
+
+/*라디오 버튼 디자인*/
+#tabMenu  input[type="radio"] {
+    display:none;  /* 라디오 버튼 감춤 */ 
+}
+#tabMenu label {  /* 탭 제목 스타일 */ 
+    display:inline-block;  /* 탭들을 가로로 배치 */
+    margin:0 0;  /* 마진 */ 
+    padding:15px 25px;  /* 패딩 */
+    font-weight:600;   /* 글자 굵기 */
+    text-align: center;   /* 글자 정렬 */
+    color:#aaa;  /* 글자 색 */ 
+    border:1px solid transparent;  /* 테두리 */ 
+}
+
+/* 메뉴에 마우스오버, 클릭했을 때*/
+#tabMenu label:hover {  /* 마우스 오버했을 때 탭 제목 스타일 */
+    color:#222;  
+    cursor:pointer;
+}
+/* + 인접 요소 선택자 */
+#tabMenu input:checked + label {  /* 활성화된 탭 제목 스타일 */ 
+    color:#b00;
+    border:1px solid #ddd;
+    background-color: #eee;
+}
+
+/*전체를 일단 보이지 않도록 구현*/
+.tabContent {  /* 탭 내용 스타일 */
+    display:none;
+    padding:20px 0 0;
+    border-top:1px solid #ddd;
+}
+.tabContent h2{  
+    display:none; 
+}
+
+#notice ul {
+    list-style: disc;
+    margin-left:30px;
+}
+#notice ul li {
+    font-size:25px;
+    line-height:1.5;
+}
+/*그림 가운데 정렬을 위해서*/
+#gallery>ul>li:first-child>img:first-child{
+    margin-left:60px;
+}
+/*그림 크기 조절*/
+#gallery ul li img{
+    width:150px;  
+    border:solid 1px black;
+}
+/*이미지 가로로 배치하기 위해서*/
+#gallery ul li{
+    display:inline;  
+}
+/*모든 형제 선택자로 선택되었을 때 보일 수 있도록 구현*/
+#tab1:checked ~ #notice, 
+#tab2:checked ~ #gallery {
+    display:block;
+}
+
+/********************************/
+/*   퀵 링크 영역    */
+/********************************/
+#links{
+    border: 1px #eee solid;
+}
+#links ul{
+    padding:0;  /* 패딩 */ 
+    overflow: hidden;  /* 넘치는 것은 감춤 */
+}
+#links ul li{
+    float:left;  /* 가로로 배치 */
+    width:33%;  /* 1/3 크기만큼씩 */
+    text-align:center;  /* 가운데 정렬 */
+    margin:10px 0;  /* 마진 */
+}
+  
+#links ul li a span{
+    display:block;  /* 블록 레벨로 */ 
+    margin:40px auto;  /* 가운데 배치 */ 
+    width:150px;  /* 가로 크기 */ 
+    height:150px;  /* 세로 크기 */
+    border-radius:150px;/*테두리 둥글게*/
+    border:1px solid #ddd;  /* 테두리 스타일 */
+}
+
+#quick-icon1 {
+    background-image:url('photo4.jpg'); 
+    background-size:150px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+  }
+#quick-icon2 {
+    background-image:url('photo5.jpg');
+    background-size:150px; 
+    background-repeat: no-repeat;
+  }
+#quick-icon3 {
+    background-image:url('photo6.jpg'); 
+    background-size:150px;
+    background-repeat: no-repeat;
+  }
+  
+#links ul li a p {
+    margin-top:15px;  /* 위쪽 마진 */
+    font-weight:600;  /* 글자 굵기 */
+    color:#666;  /* 글자 색 */
+    font-size:25px;
+}
+
+footer{
+    display:flex;
+    flex-direction: column;
+    border-top:1px solid #ddd;
+}
+#con1{
+    color:gray; 
+    margin:15px 0;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#intro>li{
+    display:inline-block;
+    padding: 10px 20px;
+    border-right:1px solid #ddd;
+}
+#intro>li:last-child{
+    border:none;
+}
+#intro>li>a{
+    color:gray;
+    font-size:25px;
+}
+#sns>li{
+    display:inline-block;
+    margin:0 5px;
+}
+#insta{
+    color:hotpink;
+}
+#face{
+    color:blue;
+}
+#yout{
+    color:red;
+}
+#address{
+    color:gray;
+    font-size:25px;
+    margin-left:18px;
+}

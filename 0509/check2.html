@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            list-style: '🟩';
+        }
+
+        li {
+            line-height: 35px;
+        }
+
+        .check {
+            color: black;
+            font-size: 20px;
+            margin-right: 25px;
+            cursor: pointer;
+        }
+
+        .select {
+            color: #ccc;
+            text-decoration: line-through;
+            list-style-type: "✅";
+        }
+
+        .noselect {
+            color: black;
+            text-decoration: none;
+            list-style-type: '🟩';
+        }
+    </style>
+</head>
+
+<body>
+    <h1>할 일 목록</h1>
+    <ul>
+        <li class="check">할 일 1 </li>
+        <li class="check">할 일 2 </li>
+        <li class="check">할 일 3 </li>
+        <li class="check">할 일 4 </li>
+        <li class="check">할 일 5 </li>
+    </ul>
+    <button type="button" id="btn">초기화</button>
+
+    <script>
+        var checks = document.querySelectorAll(".check");
+        cosole.log(checks);
+        for(let i=0; i<checks.length; i++) {
+            checks[i].addEventListener("click", function() {
+                let element = this;
+                element.classList.add('select')
+                console.log(element);
+            });
+        }
+
+        document.querySelector("#btn").addEventListener('click', function() {
+            let lis = document.querySelectorAll('li.check');
+            console.log(lis);
+
+            for(let i=0; i<lis.length; i++) {
+                lis[i].classList.remove('select');
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+BE+VLG:wght@100..400&display=swap');
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 30px;
+    font-family: 'Nanum Pen Script', cursive;
+}
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#con {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(6, 200px);
+    grid-template-rows: repeat(8, 100px);
+    grid-template-areas:
+        "l nav nav nav nav nav"
+        "slid slid slid slid slid slid"
+        "slid slid slid slid slid slid"
+        "slid slid slid slid slid slid"
+        "tab tab tab link link link"
+        "tab tab tab link link link"
+        "tab tab tab link link link"
+        "foot foot foot foot foot foot";
+}
+
+
+
+
+#logo a{
+    color:black;
+    text-align: center;
+    height: 100%;
+    line-height: 100px;
+    font-family: "Playwrite BE VLG", cursive;
+}
+
+#logo {
+    background-color:white;
+    grid-area: l;
+
+}
+#nav {
+    background-color:orange;
+    grid-area: nav;
+}
+
+#slideshow {
+    background-color: yellow;
+    grid-area: slid;
+}
+
+#tabMenu {
+    background-color: green;
+    grid-area: tab;
+
+}
+
+#links {
+    background-color: blue;
+    grid-area: link;
+
+}
+
+footer {
+    background-color: gray;
+    grid-area: foot;
+
+}
