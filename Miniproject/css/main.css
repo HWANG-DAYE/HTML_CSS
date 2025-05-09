@@ -1,0 +1,77 @@
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-size: 25px;
+    font-family: 'ChosunGu', cursive;
+}
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+#con {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+#container {
+    display: grid;
+    grid-template-columns: repeat(8, 150px);
+    grid-template-rows: repeat(9, 100px);
+    grid-template-areas:
+        "logo logo nav nav nav nav nav nav"
+        "profile profile content content content content content content"
+        "profile profile content content content content content content"
+        "profile profile content content content content content content"
+        "profile profile content content content content content content"
+        "profile profile content content content content content content"
+        "profile profile content content content content content content"
+        "profile profile content content content content content content"
+        "foot foot foot foot foot foot foot foot";
+}
+
+#logo {
+    background-color: white;
+    grid-area: logo;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo img {
+    width: 80%;
+    object-fit: contain;
+}
+
+#nav {
+    background-color: white;
+    grid-area: nav;
+}
+
+#profile {
+    background-color: rgb(250, 217, 222);
+    grid-area: profile;
+}
+
+#content {
+    background-color: #cfcfcf;
+    grid-area: content;
+
+}
+
+footer {
+    background-color: #f5f3f3;
+    grid-area: foot;
+    font-size: small;
+    color: #717171;
+}

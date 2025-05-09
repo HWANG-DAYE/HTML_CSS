@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'YClover-Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_231029@1.1/YClover-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+#nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    height: 100px;
+    background-color: white;
+}
+
+#nav a {
+    color: black;
+    padding: 10px 40px;
+    border: 2px solid rgb(116, 115, 115);
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    background-color: white;
+    font-family: 'YClover-Bold';
+}
+
+#nav a:hover {
+    background-color: #cfcece;  /* 연한 회색 */
+    color: black;
+}
