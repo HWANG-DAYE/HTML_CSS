@@ -1,7 +1,7 @@
 @font-face {
-    font-family: 'ChosunGu';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
-    font-weight: normal;
+    font-family: 'SUITE-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/SUITE-Regular.woff2') format('woff2');
+    font-weight: 400;
     font-style: normal;
 }
 * {
@@ -9,7 +9,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-size: 25px;
-    font-family: 'ChosunGu', cursive;
+    font-family: 'SUITE-Regular', cursive;
 }
 ul {
     list-style-type: none;
