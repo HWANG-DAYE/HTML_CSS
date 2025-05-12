@@ -43,3 +43,23 @@ function setNavEvents() {
     });
   });
 }
+
+// 페이지 내 다른 data-page 링크들(글쓰기 버튼 등)에도 클릭 이벤트 적용
+document.addEventListener("click", function (e) {
+  const target = e.target.closest("a[data-page]"); // 가장 가까운 <a data-page> 요소 찾기
+  if (target) {
+    e.preventDefault(); // 기본 링크 이동 막기
+    const page = target.getAttribute("data-page");
+
+    fetch(`html/${page}`)
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("content").innerHTML = data;
+      })
+      .catch(err => {
+        document.getElementById("content").innerHTML = "<p>페이지를 불러올 수 없습니다.</p>";
+        console.error(err);
+      });
+  }
+});
+

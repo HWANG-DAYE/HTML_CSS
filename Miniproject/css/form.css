@@ -1,0 +1,172 @@
+#content {
+    padding: 20px;
+    margin: 0;
+}
+/* 버튼 */
+.button {
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: #fffefe;
+    border: 1px solid #000;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'SUITE-Regular', cursive;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn-wrap {
+    text-align: right;
+}
+
+.button2 {
+    border-radius: 10px;
+    padding: 5px 20px;
+    background-color: #000;
+    border: 1px solid #000;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'SUITE-Regular', cursive;
+    font-size: 15px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* 공통 */
+#form_diary,
+#form_book,
+#form_movie,
+#form_study {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* 세로 배치 */
+    margin-top: 50px;
+}
+
+#form_diary ul,
+#form_book ul,
+#form_movie ul,
+#form_study ul {
+    list-style-type: none;
+    font-size: 17px;
+    margin-bottom: 15px;
+    line-height: 30px;
+    padding: 5px 10px;
+}
+
+/* 다이어리 */
+#form_diary input[type="text"],
+#form_diary textarea {
+    border: 0.5px solid #878787;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'SUITE-Regular';
+    padding: 8px;
+    width: 700px;
+    margin: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+    outline: none;
+    line-height: 1.5;
+}
+
+
+#form_diary textarea {
+    height: 300px;
+    resize: none;
+}
+
+/* 책 */
+#form_book input[type="text"],
+#form_book textarea,
+#form_book select {
+    border: 0.5px solid #878787;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'SUITE-Regular';
+    padding: 8px;
+    margin: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+    outline: none;
+    line-height: 1.5;
+}
+
+#form_book textarea {
+    width: 700px;
+    height: 300px;
+    resize: none;
+}
+
+#category {
+    width: 150px;
+    padding: 8px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#title {
+    width: 320px;
+    padding: 8px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#author {
+    width: 200px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+/* 영화 */
+#form_movie input[type="text"],
+#form_movie textarea,
+#form_movie select {
+    border: 0.5px solid #878787;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'SUITE-Regular';
+    padding: 8px;
+    margin: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+    outline: none;
+    line-height: 1.5;
+}
+
+#form_movie textarea {
+    width: 700px;
+    height: 300px;
+    resize: none;
+}
+
+#director {
+    width: 200px;
+    padding: 8px;
+    font-size: 16px;
+}
+/* 공부 */
+#form_study input[type="text"],
+#form_study textarea {
+    border: 0.5px solid #878787;
+    border-radius: 5px;
+    font-size: 18px;
+    font-family: 'SUITE-Regular';
+    padding: 8px;
+    width: 700px;
+    margin: 5px;
+    background-color: #fff;
+    box-sizing: border-box;
+    outline: none;
+    line-height: 1.5;
+}
+
+
+#form_study textarea {
+    height: 300px;
+    resize: none;
+}
