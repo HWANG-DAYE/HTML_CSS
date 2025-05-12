@@ -18,3 +18,24 @@
 .btn-wrap {
   text-align: right;
 }
+
+.rating {
+  direction: rtl;
+  align-self: flex-start;  /* 부모가 flex일 때 자식만 왼쪽 정렬 */
+  margin-left: 80px; /* 살짝 띄우기 (선택) */
+  font-size: 30px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.star {
+  color: #ffffff;
+  transition: color 0.2s;
+  margin-bottom: 30px;
+}
+
+.star.selected,
+.star:hover,
+.star:hover ~ .star {
+  color: gold;
+}

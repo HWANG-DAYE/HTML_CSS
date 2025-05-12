@@ -20,29 +20,35 @@ fetch("content.html")
     document.getElementById("content").innerHTML = data;
   });
 
-// nav에 있는 메뉴들을 눌렀을 때 이벤트 설정하는 함수
 function setNavEvents() {
-  const links = document.querySelectorAll("#nav a"); // nav 안의 모든 <a> 태그 선택
+  const links = document.querySelectorAll("#nav a");
 
-  links.forEach(link => { // 각 링크마다 반복하면서
-    link.addEventListener("click", e => { // 클릭 이벤트 추가
-      e.preventDefault(); // 기본 링크 이동 막기 (페이지 새로고침 방지)
+  links.forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
 
-      const page = link.getAttribute("data-page"); // data-page 속성 값 가져오기
+      const page = link.getAttribute("data-page");
 
-      // 해당하는 HTML 파일 불러오기
+      // ✅ 모든 링크에서 active 클래스 제거
+      links.forEach(l => l.classList.remove("active"));
+
+      // ✅ 클릭한 링크에 active 클래스 추가
+      link.classList.add("active");
+
+      // ✅ 해당 HTML 로드
       fetch(`html/${page}`)
-        .then(res => res.text()) // 파일을 텍스트(HTML 코드)로 읽고
+        .then(res => res.text())
         .then(data => {
-          document.getElementById("content").innerHTML = data; // content에 덮어쓰기
+          document.getElementById("content").innerHTML = data;
         })
-        .catch(err => { // 만약 에러가 나면
+        .catch(err => {
           document.getElementById("content").innerHTML = "<p>페이지를 불러올 수 없습니다.</p>";
-          console.error(err); // 에러 로그 출력
+          console.error(err);
         });
     });
   });
 }
+
 
 // 페이지 내 다른 data-page 링크들(글쓰기 버튼 등)에도 클릭 이벤트 적용
 document.addEventListener("click", function (e) {
@@ -62,4 +68,48 @@ document.addEventListener("click", function (e) {
       });
   }
 });
+document.addEventListener("DOMContentLoaded", function () {
+  const stars = document.querySelectorAll(".star");
+  const ratingInput = document.getElementById("rating");
 
+  stars.forEach(star => {
+    star.addEventListener("click", function () {
+      const value = this.getAttribute("data-value");
+      ratingInput.value = value;
+
+      stars.forEach(s => s.classList.remove("selected"));
+      this.classList.add("selected");
+      let prev = this.previousElementSibling;
+      while (prev) {
+        prev.classList.add("selected");
+        prev = prev.previousElementSibling;
+      }
+    });
+  });
+});
+
+// 이미지 슬라이드
+let imgs = document.querySelectorAll("#slides img");
+let prev = document.querySelector("#prev");
+let nex = document.querySelector("#next");
+let img_num = 0;
+showing(img_num);
+
+function showing(n) {
+    for(let i=0; i<imgs.length; i++) {
+        imgs[i].style.display = "none";
+    }
+    imgs[n].style.display = "block";
+}
+
+prev.onclick = function() {
+    img_num--;
+    if(img_num<0) img_num = imgs.length-1;
+    showing(img_num);
+}
+
+next.onclick = function() {
+    img_num++;
+    if(img_num>imgs.length-1) img_num = 0;
+    showing(img_num);
+}

@@ -25,6 +25,10 @@
 }
 
 #nav a:hover {
-    background-color: #cfcece;  /* 연한 회색 */
+    background-color: #cfcece;
     color: black;
+}
+#nav a.active {
+  background-color: #cfcece;
+  color: black;             
 }
