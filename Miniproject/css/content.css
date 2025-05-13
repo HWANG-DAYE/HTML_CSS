@@ -39,3 +39,30 @@
 .star:hover ~ .star {
   color: gold;
 }
+
+img {
+  width: 900px;
+  height: 300px;
+  margin: -20px -20px 20px -20px;
+}
+
+/* 미리보기 부분 */
+
+#main-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 20px;
+  max-width: 900px;   /* 또는 90% 등 지정 */
+  margin: 0 auto;      /* 가운데 정렬 */
+  flex-wrap: nowrap;   /* 줄바꿈 방지 */
+}
+
+.maincontent {
+  width: 30%;
+  background-color: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  box-sizing: border-box; /* 패딩 포함해서 width 계산 */
+}
+

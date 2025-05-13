@@ -51,6 +51,7 @@ a {
 #logo img {
     width: 80%;
     object-fit: contain;
+    cursor: pointer;
 }
 
 #nav {
@@ -64,7 +65,7 @@ a {
 }
 
 #content {
-    background-color: #cfcfcf;
+    background-color: #f5f4f4;
     grid-area: content;
 
 }
