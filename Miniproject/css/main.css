@@ -27,9 +27,11 @@ a {
 #container {
     display: grid;
     grid-template-columns: repeat(8, 150px);
-    grid-template-rows: 100px repeat(7, auto) auto; /* footer */
+    grid-template-rows: 100px repeat(9, auto) auto; /* footer */
     grid-template-areas:
         "logo logo nav nav nav nav nav nav"
+        "banner banner banner banner banner banner banner banner"
+        "banner banner banner banner banner banner banner banner"
         "profile profile content content content content content content"
         "profile profile content content content content content content"
         "profile profile content content content content content content"
@@ -52,8 +54,13 @@ a {
   width: 80%; 
   height: auto;
   cursor: pointer;
+  margin: 0 auto;
 }
-
+#banner {
+    margin: 0px auto;
+    width: 1200px;
+    height: 200px;
+}
 #nav {
     background-color: white;
     grid-area: nav;
