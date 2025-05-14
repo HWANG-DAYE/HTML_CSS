@@ -1,28 +1,45 @@
-/* 표 전체를 가운데 정렬하고 폭 지정 (선택 사항) */
-table {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 15px; /* <--- td 사이 세로 간격 주기 (row 간격) */
-    margin-top: 20px;
-  }
-  
-  /* 테이블 셀 스타일 */
-  th, td {
-    padding: 10px 20px;   /* <--- 상하 10px, 좌우 20px 간격 */
-    text-align: center;
-  }
-  
-  /* 제목 밑 여백 늘리기 */
-  h5 {
-    margin-top: 0;
-    margin-bottom: 30px;
-    font-size: 20px;
-    text-align: center;
-  }
-  
-  /* 버튼 정렬 */
-  .btn-wrap {
-    text-align: right;
-    margin-bottom: 20px;
-  }
-  
+/* 버튼 정렬 */
+.btn-wrap {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 한 줄에 4개 */
+  gap: 20px;
+  padding: 20px;
+}
+
+.movie-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.movie-card:hover {
+  transform: scale(1.03);
+  /* 마우스 올렸을 때 효과 */
+}
+
+.movie-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.movie-card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.movie-card p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 10px;
+}

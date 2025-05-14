@@ -27,7 +27,7 @@ a {
 #container {
     display: grid;
     grid-template-columns: repeat(8, 150px);
-    grid-template-rows: repeat(9, 100px);
+    grid-template-rows: 100px repeat(7, auto) auto; /* footer */
     grid-template-areas:
         "logo logo nav nav nav nav nav nav"
         "profile profile content content content content content content"
@@ -49,9 +49,9 @@ a {
 }
 
 #logo img {
-    width: 80%;
-    object-fit: contain;
-    cursor: pointer;
+  width: 80%; 
+  height: auto;
+  cursor: pointer;
 }
 
 #nav {
@@ -71,8 +71,11 @@ a {
 }
 
 footer {
-    background-color: #e4e4e4;
     grid-area: foot;
-    font-size: 20px;
     color: #717171;
+    text-align: center;
+    padding: 20px;
+}
+footer a,p {
+    font-size: 13px;
 }

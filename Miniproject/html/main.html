@@ -9,23 +9,62 @@
     <link rel="stylesheet" href="../css/nav.css">
     <link rel="stylesheet" href="../css/profile.css">
     <link rel="stylesheet" href="../css/content.css">
+    <link rel="stylesheet" href="../css/list.css">
+    <link rel="stylesheet" href="../css/form.css">
     <script defer src="../js/main.js"></script> <!-- 자바스크립트 연결 -->
 </head>
 
 <body>
     <div id="con">
         <div id="container">
-            <div id="logo">
-                <a href="../html/main.html">
-                  <img src="../img/logo.png" alt="로고">
-                </a>
-              </div>              
+            <div id="logo" data-page="content.html">
+                <img src="../img/logo.png" alt="로고" />
+            </div>
             <nav id="nav"></nav>
             <aside id="profile"></aside>
             <main id="content"></main>
-            <footer>© 2025 Darong's page</footer>
+            <footer>
+                <a href="mailto:sindy1345@gmail.com">📩</a>
+                <p>Made with 🖤 and 🍀</p>
+                <p>© 2025 Darong's Page. All rights reserved.</p>
+            </footer>
         </div>
     </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 기본 화면
+            loadPage("content.html");
+
+            // 클릭된 아이콘마다 data-page 속성에서 경로 받아오기
+            document.querySelectorAll("[data-page]").forEach(el => {
+                el.addEventListener("click", e => {
+                    e.preventDefault();
+                    const page = el.getAttribute("data-page");
+                    loadPage(page);
+                });
+            });
+        });
+
+        function loadPage(url) {
+            fetch(url)
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById("content").innerHTML = data;
+                })
+                .catch(err => {
+                    document.getElementById("content").innerHTML = "<p>페이지를 불러올 수 없습니다.</p>";
+                    console.error("오류:", err);
+                });
+        }
+
+        document.getElementById("logo").addEventListener("click", () => {
+            loadPage("content.html");
+        });
+
+
+    </script>
+
 </body>
 
 </html>
