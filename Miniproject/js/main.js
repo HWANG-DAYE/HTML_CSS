@@ -68,6 +68,8 @@ document.addEventListener("click", function (e) {
       });
   }
 });
+
+// 별점
 document.addEventListener("DOMContentLoaded", function () {
   const stars = document.querySelectorAll(".star");
   const ratingInput = document.getElementById("rating");
@@ -88,28 +90,21 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// 이미지 슬라이드
-let imgs = document.querySelectorAll("#slides img");
-let prev = document.querySelector("#prev");
-let nex = document.querySelector("#next");
-let img_num = 0;
-showing(img_num);
 
-function showing(n) {
-    for(let i=0; i<imgs.length; i++) {
-        imgs[i].style.display = "none";
+// calendar
+// calendar-img가 존재하는 경우에만 showing() 실행
+document.addEventListener("DOMContentLoaded", function () {
+  let imgs = document.querySelectorAll(".calendar-img");
+  let img_num = 0;
+
+  if (imgs.length > 0) {
+    showing(img_num);
+  }
+
+  function showing(n) {
+    for (let i = 0; i < imgs.length; i++) {
+      imgs[i].style.display = "none";
     }
     imgs[n].style.display = "block";
-}
-
-prev.onclick = function() {
-    img_num--;
-    if(img_num<0) img_num = imgs.length-1;
-    showing(img_num);
-}
-
-next.onclick = function() {
-    img_num++;
-    if(img_num>imgs.length-1) img_num = 0;
-    showing(img_num);
-}
+  }
+});

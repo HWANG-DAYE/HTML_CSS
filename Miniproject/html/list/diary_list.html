@@ -1,19 +1,94 @@
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>diary</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Diary</title>
+  <link rel="stylesheet" href="../css/list.css" />
 </head>
-
 <body>
-    <div id="list">
-        <div class="btn-wrap">
-            <a href="#" data-page="../form/diary_form.html" class="button">글쓰기✏️</a>
-        </div>
-        <p>다이어리 목록</p>
+  <div id="list">
+    <div class="btn-wrap">
+      <a href="#" data-page="../form/diary_form.html" class="button">글쓰기✏️</a>
     </div>
-</body>
+    <h2>📅 다이어리 달력</h2>
+    <div id="calendar"></div>
+  </div>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const calendar = document.getElementById("calendar");
+
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = today.getMonth(); // 0-based
+      const date = new Date(year, month + 1, 0);
+      const daysInMonth = date.getDate();
+
+      let html = '<table class="calendar"><thead><tr>';
+      const dayNames = ["일", "월", "화", "수", "목", "금", "토"];
+      for (const day of dayNames) {
+        html += `<th>${day}</th>`;
+      }
+      html += '</tr></thead><tbody><tr>';
+
+      const firstDay = new Date(year, month, 1).getDay();
+
+      // 빈칸 채우기
+      for (let i = 0; i < firstDay; i++) {
+        html += "<td></td>";
+      }
+
+      for (let d = 1; d <= daysInMonth; d++) {
+        const dayOfWeek = (firstDay + d - 1) % 7;
+        const dateStr = `${year}-${(month + 1).toString().padStart(2, "0")}-${d.toString().padStart(2, "0")}`;
+
+        html += `<td class="day" data-date="${dateStr}">${d}<div class="emoji"></div></td>`;
+
+        if (dayOfWeek === 6 && d !== daysInMonth) {
+          html += "</tr><tr>";
+        }
+      }
+
+      html += "</tr></tbody></table>";
+      calendar.innerHTML = html;
+
+      // 예시: 이모티콘 표시 (나중엔 서버에서 데이터 불러와서 추가 가능)
+      const diaryData = {
+        "2025-05-10": "😊",
+        "2025-05-13": "😢",
+        "2025-05-15": "😠",
+      };
+
+      for (const [date, emoji] of Object.entries(diaryData)) {
+        const cell = document.querySelector(`.day[data-date="${date}"] .emoji`);
+        if (cell) {
+          cell.textContent = emoji;
+          cell.classList.add("clickable");
+        }
+      }
+
+      // 클릭 시 상세페이지로 이동
+      document.querySelectorAll(".emoji.clickable").forEach((el) => {
+        el.addEventListener("click", (e) => {
+          const date = el.parentElement.parentElement.getAttribute("data-date");
+          const url = `../detail/diary_detail.html?date=${date}`;
+          loadPage(url); 
+        });
+      });
+    });
+
+    function loadPage(url) {
+      fetch(url)
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("content").innerHTML = data;
+        })
+        .catch((err) => {
+          document.getElementById("content").innerHTML = "<p>페이지를 불러올 수 없습니다.</p>";
+          console.error("오류:", err);
+        });
+    }
+  </script>
+</body>
 </html>
