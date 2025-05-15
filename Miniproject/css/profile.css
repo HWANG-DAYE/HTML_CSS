@@ -1,5 +1,7 @@
 #profile {
-  padding: 8px;
+  margin: 10px;
+  margin-top: 20px;
+  padding: 5px;
   padding-top: 15px;
   border-radius: 15px;
   border: 3px solid #cfcece;
@@ -19,7 +21,7 @@
   /* 이미지만 수평 가운데 정렬 */
   width: 180px;
   height: 200px;
-  border-radius: 15%;
+  border-radius: 4%;
   object-fit: cover;
   filter: opacity(100%);
 }
@@ -31,13 +33,13 @@ ul {
 
 li {
   font-size: 17px;
-  line-height: 30px;
+  line-height: 40px;
 }
 
 .icon-wrap {
   display: flex;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 30px;
   line-height: 30px; /* li 줄 높이랑 맞춤 */
 }
 

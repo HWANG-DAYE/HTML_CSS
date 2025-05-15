@@ -5,14 +5,16 @@
 
 /* 버튼 */
 .button {
+    margin-right: 30px;
+    margin-top: 10px;
     border-radius: 10px;
     padding: 5px 10px;
     background-color: #fffefe;
-    border: 1px solid #000;
+    border: 2px solid #a8a8a8;
     cursor: pointer;
     font-weight: bold;
     font-family: 'SUITE-Regular', cursive;
-    font-size: 15px;
+    font-size: 18px;
     text-decoration: none;
     display: inline-block;
 }
@@ -36,7 +38,7 @@
 }
 
 /* 공통 */
-#form_diary,
+#form_board,
 #form_book,
 #form_movie,
 #form_study {
@@ -48,7 +50,7 @@
     margin-top: 50px;
 }
 
-#form_diary ul,
+#form_board ul,
 #form_book ul,
 #form_book li,
 #form_movie ul,
@@ -104,8 +106,8 @@
     cursor: pointer;
 }
 
-#form_diary input[type="text"],
-#form_diary textarea {
+#form_board input[type="text"],
+#form_board textarea {
     border: 0.5px solid #878787;
     border-radius: 5px;
     font-size: 18px;
@@ -120,12 +122,12 @@
 }
 
 
-#form_diary textarea {
+#form_board textarea {
     height: 300px;
     resize: none;
 }
 
-/* 책 */
+/* 책, 영화 첨부파일 */
 #preview {
     margin-top: 10px;
     max-width: 200px;
@@ -140,6 +142,7 @@
     font-size: 20px;
 }
 
+/* 책 */
 #form_book input[type="text"],
 #form_book textarea,
 #form_book select {

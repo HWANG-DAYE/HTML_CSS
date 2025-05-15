@@ -17,6 +17,7 @@ ul {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 #con {
@@ -43,7 +44,7 @@ a {
 }
 
 #logo {
-    background-color: white;
+    background-color: #f7eaf9;
     grid-area: logo;
     display: flex;
     justify-content: center;
@@ -60,9 +61,10 @@ a {
     margin: 0px auto;
     width: 1200px;
     height: 200px;
+    filter: opacity(85%);
 }
 #nav {
-    background-color: white;
+    background-color: #f7eaf9;
     grid-area: nav;
 }
 
@@ -72,8 +74,9 @@ a {
 }
 
 #content {
-    background-color: #f5f4f4;
+    background-color: #f7eaf9;
     grid-area: content;
+    color: black;
 
 }
 

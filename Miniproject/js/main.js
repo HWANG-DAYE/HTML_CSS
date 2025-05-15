@@ -91,20 +91,3 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// calendar
-// calendar-img가 존재하는 경우에만 showing() 실행
-document.addEventListener("DOMContentLoaded", function () {
-  let imgs = document.querySelectorAll(".calendar-img");
-  let img_num = 0;
-
-  if (imgs.length > 0) {
-    showing(img_num);
-  }
-
-  function showing(n) {
-    for (let i = 0; i < imgs.length; i++) {
-      imgs[i].style.display = "none";
-    }
-    imgs[n].style.display = "block";
-  }
-});
