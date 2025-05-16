@@ -29,13 +29,13 @@ function setNavEvents() {
 
       const page = link.getAttribute("data-page");
 
-      // ✅ 모든 링크에서 active 클래스 제거
+      // 모든 링크에서 active 클래스 제거
       links.forEach(l => l.classList.remove("active"));
 
-      // ✅ 클릭한 링크에 active 클래스 추가
+      // 클릭한 링크에 active 클래스 추가
       link.classList.add("active");
 
-      // ✅ 해당 HTML 로드
+      // 해당 HTML 로드
       fetch(`html/${page}`)
         .then(res => res.text())
         .then(data => {
@@ -52,7 +52,7 @@ function setNavEvents() {
 
 // 페이지 내 다른 data-page 링크들(글쓰기 버튼 등)에도 클릭 이벤트 적용
 document.addEventListener("click", function (e) {
-  const target = e.target.closest("a[data-page]"); // 가장 가까운 <a data-page> 요소 찾기
+  const target = e.target.closest("a[data-page]");
   if (target) {
     e.preventDefault(); // 기본 링크 이동 막기
     const page = target.getAttribute("data-page");
